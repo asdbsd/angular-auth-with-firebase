@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AuthService } from './shared/services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     AngularFirestoreModule,
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
