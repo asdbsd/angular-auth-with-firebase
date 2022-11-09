@@ -2,52 +2,26 @@
   <div class="displayTableCell">
     <div class="authBlock">
       <h3>Register</h3>
-      <div class="formGroup">
-        <input
-          type="email"
-          class="formControl"
-          placeholder="Email Address"
-          #userEmail
-          required
-        />
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email Address" #userEmail required />
       </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPwd
-          required
-        />
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" #userPwd required />
       </div>
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Register"
-          (click)="authService.login(userEmail.value, userPwd.value)"
-        />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.googleAuth()"
-        >
-          <i class="fab fa-google-plus-g"></i>
+      <div class="form-group">
+        <input type="button" class="btn btn-primary" value="Register"
+          (click)="authService.register(userEmail.value, userPwd.value)" />
+        <span class="orInner">Or </span>
+        <button type="button" class="btn btn-success" (click)="authService.googleAuth()">
+          <fa-icon [icon]="faGoogle"></fa-icon>
           Continue with Google
         </button>
+        <!-- Continue with Google -->
       </div>
     </div>
     <div class="redirectToLogin">
-      <span
-        >Already have an account?
-        <span class="redirect" routerLink="/sign-in">Log In</span></span
-      >
+      <span>Already have an account? </span>
+      <a class="redirect" routerLink="/login">Log In</a>
     </div>
   </div>
 </div>

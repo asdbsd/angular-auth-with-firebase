@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faRedo } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./verify-email.component.scss']
 })
 export class VerifyEmailComponent implements OnInit {
-
+  faRedo = faRedo
   constructor(
     public authService: AuthService
   ) { }
