@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -32,13 +33,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     NgbModule,
+    FontAwesomeModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
-    AngularFireDatabaseModule,
-    FontAwesomeModule
+    AngularFireDatabaseModule
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

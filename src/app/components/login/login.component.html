@@ -2,32 +2,32 @@
   <div class="displayTableCell">
     <div class="authBlock">
       <h3>Sign In</h3>
-      <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Username" #userName required>
       </div>
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
-      </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btn-primary" value="Log in" (click)="authService.login(userName.value, userPassword.value)">
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
+      <div class="form-group">
+        <input type="password" class="form-control sm" placeholder="Password" #userPassword required>
       </div>
 
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.googleAuth()">
-          <i class="fa fa-google-plus-g"></i>
+      <div class="form-group">
+        <input type="button" class="btn btn-primary" value="Log in" (click)="authService.login(userName.value, userPassword.value)"><span class="orInner">Or </span><button type="button" class="btn btn-success" (click)="authService.googleAuth()">
+          <fa-icon [icon]="faGoogle" class="fab fa-google-plus-g"></fa-icon>
           Log in with Google
         </button>
       </div>
+      <div class="form-group">
+
+      </div>
+
+      <div class="form-group">
+
+      </div>
       <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+        <a routerLink="/forgot-password">Forgot Password?</a>
       </div>
     </div>
     <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      <span>Don't have an account? </span><a class="redirect btn btn-success" routerLink="/register"> Register</a>
     </div>
   </div>
 </div>
