@@ -49,7 +49,6 @@ export class AuthService {
     return this.fireAuth
     .createUserWithEmailAndPassword(email, password)
     .then((response) => {
-
       this.setUserData(response.user);
       this.sendVerificationEmail();
     })
@@ -85,7 +84,7 @@ export class AuthService {
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
-  authenticatedLogin(provider: any) {
+  loginWithProvider(provider: any) {
     return this.fireAuth
       .signInWithPopup(provider)
       .then((response) => {
@@ -98,7 +97,7 @@ export class AuthService {
   }
 
   googleAuth() {
-    return this.authenticatedLogin( new auth.GoogleAuthProvider() );
+    return this.loginWithProvider( new auth.GoogleAuthProvider() );
   }
 
   forgotPassword(passwordResetEmail: string) {
